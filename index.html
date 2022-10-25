@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Basketball Scoreboard | Nabil ASHAIB</title>
+        <link rel="stylesheet" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container" id="content">
+            <div class="row">
+                <!---- Home screen and points ---->
+                <div class="col-sm">
+                    <p class="display-4"><b>HOME</b></p>
+                    <p  class="display-1 score-screen" id="home-score"></p>
+
+                    <div id="score-buttons">
+                        <button onclick="add1PointToHome()">+1</button>
+                        <button onclick="add2PointToHome()">+2</button>
+                        <button onclick="add3PointToHome()">+3</button>
+                    </div>
+                </div>
+
+                <!---- Timer, Periods and Fouls ---->
+                <div class="col-sm">
+                    <!-- Timer -->
+                    <p><b>TIME</b></p>
+                    <h1 class="display-4" id="timer-screen">00:00</h1>
+                    
+                    <!-- Periods -->
+                    <p><b>PERIOD</b></p>
+                    <div style="text-align: center; margin-bottom: 40px;">
+                        <span onclick="minusPeriod()" id="minus-period-btn">-</span>
+                        <b class="" id="period">1</b>
+                        <span onclick="addPeriod()" id="add-period-btn">+</span>
+                    </div>
+                    
+                    <!-- Fouls -->
+                    <p><b>FOULS</b></p>
+                    <div style="margin-bottom: 40px;">
+                        <button onclick="addFoulToHome()" id="add-foul-btn">+</button>
+                        <b class="fouls" id="home-fouls">00</b>
+                        
+                        <b class="fouls" id="guest-fouls">00</b>
+                        <button onclick="addFoulToGuest()" id="add-foul-btn">+</button>
+                    </div>
+                </div>
+
+                <!---- Guest screen and points ---->
+                <div class="col-sm">
+                    <p class="display-4"><b>GUEST</b></p>
+                    <p  class="display-1 score-screen" id="guest-score"></p>
+
+                    <div id="score-buttons">
+                        <button onclick="add1PointToGuest()">+1</button>
+                        <button onclick="add2PointToGuest()">+2</button>
+                        <button onclick="add3PointToGuest()">+3</button>
+                    </div>
+                </div>
+            </div>
+
+            <!---- Start / New Game buttons ---->
+            <div class="row">
+                <div class="col-sm" style="text-align: center;">
+                    <button onclick="start()" id="start">START</button>
+                    <button onclick="newGame()" id="new-game">New Game</button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script src="script.js"></script>
+    </body>
+</html>
